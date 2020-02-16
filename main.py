@@ -1,6 +1,6 @@
-from bottle import run, get, route, request, template, redirect, static_file
+from bottle import run, route, request, template, redirect, static_file
 import  os
-from segment import Segment
+from utils_files.segment import Segment
 
 text = "Eppo"
 
