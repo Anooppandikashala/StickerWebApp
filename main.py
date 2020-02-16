@@ -51,7 +51,7 @@ def do_upload():
     #
     # return  template('show_img', picture=str("./"+res))
 if os.environ.get('APP_LOCATION') == 'heroku':
-    run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)),debug=True)
+    run(host="0.0.0.0", port=int(os.environ.get("PORT", 3000)),debug=True)
 else:
     run(host='localhost', port=8080, debug=True)
 #run(reloader=True,debug=True)
