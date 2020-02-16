@@ -1,4 +1,4 @@
-from bottle import run, route, request, template, redirect, static_file
+from bottle import run, get,route, request, template, redirect, static_file
 import  os
 from utils_files.segment import Segment
 
@@ -6,6 +6,10 @@ text = "Eppo"
 
 save_path=""
 pic = ["picture_1","picture_2"]
+
+@get('/')
+def Home():
+    return template('Home')
 
 #@get('/get_pic')
 # def getAll():
