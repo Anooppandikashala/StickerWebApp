@@ -6,3 +6,4 @@ python-qt4
 libfontconfig1
 build-essential
 libglib2.0-0
+libice6
