@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>File Upload</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple login form</title>
+    <title>Sticker Creator </title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <style>
       html, body {
@@ -72,11 +73,50 @@
       display: block;
       float: none;
       }
+      body
+  background: #e9e9e9
+  font-family: 'Roboto', sans-serif
+  text-align: center
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+span
+  color: #666
+  font-size: 12px
+  display: block
+  position: absolute
+  bottom: 10px
+  position: absolute
+  width: 90%
+  left: 50%
+  top: 45%
+  bottom: auto
+  right: auto
+  transform: translateX(-50%) translateY(-50%)
+  text-align: center
+  a
+    color: #000000
+    text-decoration: none
+  .fa
+    color: #E90606
+    margin: 0 3px
+    font-size: 10px
+    animation: pound .35s infinite alternate
+    -webkit-animation: pound .35s infinite alternate
+
+@-webkit-keyframes pound
+  to
+    transform: scale(1.1)
+
+
+@keyframes pound
+  to
+    transform: scale(1.1)
     </style>
   </head>
   <body>
     <form action="/upload" method="post" enctype="multipart/form-data">
-      <h1>Sticker Creater</h1>
+      <h1>Sticker Creator</h1>
       <div class="formcontainer">
       <hr/>
       <div class="container">
@@ -87,5 +127,9 @@
       </div>
       <button type="submit">Start upload</button>
     </form>
+    <span class="container">
+    <p>Copy Right &copy; 2020 Anoop P &nbsp;&nbsp; Made <span style="font-size:200%;color:red;">&hearts;</span> with Github</p>
+
+    </span>
   </body>
 </html>
