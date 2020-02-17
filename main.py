@@ -40,6 +40,7 @@ def server_static(name):
 def do_upload():
     #category   = request.forms.get('category')
     upload     = request.files.get('upload')
+    sticker_text = str(request.forms.get('sticker_text'))
     name, ext = os.path.splitext(upload.filename)
     if ext not in ('.png','.jpg','.jpeg'):
         return 'File extension not allowed.'
@@ -47,7 +48,7 @@ def do_upload():
     save_path =  str(upload.filename)
     upload.save(save_path) # appends upload.filename automatically
 
-    seg = Segment(save_path, text)
+    seg = Segment(save_path, sticker_text)
     seg_map = seg.find_segments()
     res = seg.vis_segmentation()
 
