@@ -3,3 +3,6 @@ libxext6
 libxrender-dev
 python3-tk
 python-qt4
+libfontconfig1
+build-essential
+libglib2.0-0
