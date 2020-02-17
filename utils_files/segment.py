@@ -1,5 +1,5 @@
 # import run_tf
-import settings
+# import settings
 import tensorflow as tf
 from matplotlib import gridspec
 from matplotlib import pyplot as plt
@@ -16,7 +16,7 @@ import numpy as np
 
 
 INPUT_SIZE = 257
-
+model_file = "models/deeplabv3_257_mv_gpu.tflite"
 
 def run_model(interpreter, frame):
     # Get input and output tensors.
@@ -117,8 +117,8 @@ class Segment:
         self.image_path = img_path
 
         # Initialize TF model
-        print("Using model: " + settings.model_file)
-        self.interpreter = tf.lite.Interpreter(model_path=settings.model_file)
+        print("Using model: " + model_file)
+        self.interpreter = tf.lite.Interpreter(model_path=model_file)
         self.interpreter.allocate_tensors()
         print("Loaded TF interpreter")
 
@@ -128,8 +128,8 @@ class Segment:
         print("Loaded image")
 
     def find_segments(self):
-        output_tensors = run_tf.run_model(self.interpreter, self.image)
-        self.segment_map = run_tf.output_to_classes(output_tensors)
+        output_tensors = run_model(self.interpreter, self.image)
+        self.segment_map = output_to_classes(output_tensors)
         return self.segment_map
 
     # Code taken partially from Google Colab
