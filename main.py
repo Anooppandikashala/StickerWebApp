@@ -1,13 +1,16 @@
 from bottle import run, get,route, request, template, redirect, static_file
 import  os
 from utils_files.segment import Segment
-
+import string
+import random
 text = "Eppo"
 
 save_path=""
 pic = ["picture_1","picture_2"]
 
-
+def randomword(length):
+   letters = string.ascii_lowercase
+   return ''.join(random.choice(letters) for i in range(length))
 
 @route('/')
 @route('/home')
@@ -45,7 +48,13 @@ def do_upload():
     if ext not in ('.png','.jpg','.jpeg'):
         return 'File extension not allowed.'
 
-    save_path =  str(upload.filename)
+    N = len(sticker_text)
+
+    # using random.choices()
+    # generating random strings
+    resString = randomword(N)
+
+    save_path =  resString + str(upload.filename)
     upload.save(save_path) # appends upload.filename automatically
 
     seg = Segment(save_path, sticker_text)

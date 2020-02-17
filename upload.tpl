@@ -115,6 +115,7 @@ span
     </style>
   </head>
   <body>
+  <div class="container">
     <form action="/upload" method="post" enctype="multipart/form-data">
       <h1>Sticker Creator</h1>
       <div class="formcontainer">
@@ -131,5 +132,6 @@ span
     <p>Copy Right &copy; 2020 Anoop P &nbsp;&nbsp; Made <span style="font-size:200%;color:red;">&hearts;</span> with Github</p>
 
     </span>
+  </div>
   </body>
 </html>
