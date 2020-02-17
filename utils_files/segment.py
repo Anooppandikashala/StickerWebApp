@@ -9,8 +9,6 @@ import matplotlib
 # make sure Tk backend is used
 matplotlib.use("TkAgg")
 from PIL import Image
-
-
 import cv2
 import numpy as np
 
